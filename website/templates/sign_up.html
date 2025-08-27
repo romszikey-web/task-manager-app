@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <h2 class="text-center mb-4">Create Your Account</h2>
+            <div class="card">
+                <div class="card-body">
+                    <form action="{{ url_for('auth.sign_up') }}" method="POST">
+                        <div class="mb-3">
+                            <label for="firstName" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="firstName" 
+                                   name="firstName" required placeholder="Enter your first name">
+                        </div>
+                         <div class="mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" 
+                                   name="email" required placeholder="Enter your email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password1" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password1" 
+                                   name="password1" required placeholder="Create a password">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password2" class="form-label">Confirm Password</label>
+                            <input type="password" class="form-control" id="password2" 
+                                   name="password2" required placeholder="Confirm your password">
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                Create Account
+                            </button>
+                        </div>
+                        <div class="text-center">
+                            <p class="mb-0">Already have an account?</p>
+                            <a href="{{ url_for('auth.login') }}" class="btn btn-link">
+                                Login Here
+                            </a>
+                        </div>
+                    </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
